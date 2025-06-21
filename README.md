@@ -1,5 +1,5 @@
 # eJPTv2
-**Curso de la Academia de El Rincón del Hacker**
+**Curso de la Academia: El Rincón del Hacker**
 
 ---------------------------------------------------------------------------------------------
 
@@ -13,15 +13,27 @@ Principalmente Mario nos pasa una máquina W7 para instalar en VirtualBox y nos 
 
 **Comandos para actualizar Kali Linux.**
 
-`apt update` 
+```bash
+apt update
+```
 
-`apt upgrade -y` 
+```bash
+apt upgrade -y
+```
 
-`apt autoremove` <!-- Sirve para poder eliminar las dependencias huerfanas -->
+```bash
+apt autoremove
+```
+ <!-- Sirve para poder eliminar las dependencias huerfanas -->
 
-`apt dist-upgrade` <!-- Se utiliza para actualizar todos los paquetes instalados a sus versiones más recientes -->
+```bash
+apt dist-upgrade
+```
+ <!-- Se utiliza para actualizar todos los paquetes instalados a sus versiones más recientes -->
 
-`reboot`
+```bash
+reboot
+```
 
 ---------------------------------------------------------------------------------------------
 
