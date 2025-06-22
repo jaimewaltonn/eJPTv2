@@ -6,15 +6,11 @@
 
 ---
 
----------------------------------------------------------------------------------------------
-
 En este Repositorio, apuntare todo lo que vaya aprendiendo de esta certificación. 
 
 ---------------------------------------------------------------------------------------------
 
 Principalmente Mario nos pasa una máquina W7 para instalar en VirtualBox y nos explica como bajar una máquina Kali Linux para VirtualBox y cambiarle el idioma al teclado.
-
----------------------------------------------------------------------------------------------
 
 ---
 
@@ -43,9 +39,6 @@ apt dist-upgrade
 ```bash
 reboot
 ```
-
----------------------------------------------------------------------------------------------
-
 ---
 
 ## Explicación sobre adaptador puente, NAT y Red NAT
@@ -57,8 +50,6 @@ Adaptador puente > las máquinas virtuales van a tener un comportamiento como si
 NAT > Network Address Translation. Es una técnica que permite que varias máquinas virtuales utilicen una sola dirección IP pública para acceder a Internet, compartiendo la conexión de red de la máquina anfitriona. Con NAT, las VMs pueden navegar por Internet, pero no son accesibles directamente desde la red externa, lo que proporciona aislamiento y seguridad adicional en entornos de laboratorio. 
 
 Red NAT o Red Interna > Es una red que solo se ve en VirtualBox
-
----------------------------------------------------------------------------------------------
 
 ---
  
@@ -87,8 +78,6 @@ antes de ejecutar el comando en la máquina víctima hay que lanzar en la máqui
 Este comando abre un puerto 443 en la máquina atacante y espera conexiones entrantes, útil para recibir una reverse shell desde la máquina víctima.
 
 Ejecutamos el comando en la máquina víctima (10.0.10.39) y esta establecerá una conexión hacia la máquina atacante. Desde la máquina atacante, al recibir la reverse shell, tendremos acceso remoto a la terminal de la víctima, lo que nos permitirá ejecutar comandos, lanzar scripts y realizar acciones de post-explotación.
-
----------------------------------------------------------------------------------------------
 
 ---
 
@@ -135,8 +124,6 @@ El comando `curl http://10.0.10.51/443` esto intenta realizar una petición HTTP
 
 En el contexto de una reverse shell, este comando no ejecuta ninguna shell ni conecta con Netcat; solo descarga y muestra el contenido disponible en esa (por eso anteriormente hemos ejecutado sudo nc -nlvp 443)
 
----------------------------------------------------------------------------------------------
-
 ---
 
 ## Compartir archivos desde mi red interna con un Servidor HTTP con Python en máquinas Windows
@@ -174,8 +161,6 @@ certutil -split -urlcache -f [URL_del_archivo] [nombre_destino]
 ```
 
 Este método es útil para transferir archivos entre máquinas en una red interna, especialmente cuando no se dispone de herramientas como `curl` o `wget` en Windows.
-
----------------------------------------------------------------------------------------------
 
 ---
 
