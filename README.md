@@ -178,7 +178,7 @@ Antes de comenzar con las herramientas de reconocimiento, es importante saber qu
 Este pequeño truco puede ayudarte a identificar rápidamente el tipo de sistema operativo al que estás
 
 
-NOTA:
+**NOTA:**
 
 El valor del TTL (Time To Live) en la respuesta de un ping puede darnos una pista sobre el sistema operativo del equipo remoto. Los valores más habituales de TTL inicial son:
 
@@ -236,4 +236,74 @@ Este comando es muy útil para obtener un listado de los dispositivos activos en
 ## Escaneos básicos con NMAP
 
 ---
+El siguiente comando nos proporciona información básica sobre los puertos abiertos y servicios detectados en un host:
+
+```bash
+nmap 10.0.10.50
+```
+
+O, de forma general:
+
+```bash
+nmap [Host]
+```
+
+Esto realizará un escaneo estándar de los 1.000 puertos más comunes en la dirección IP o nombre de host que indiques.
+
+Un comando más completo para realizar un escaneo profundo sería el siguiente:
+
+```bash
+nmap -p- --open -sS -sC -sV --min-rate 2000 -n -vvv -Pn 10.0.10.50 -oN Escaneo.txt
+```
+
+- `-p-`: Escanea todos los puertos (del 1 al 65535).
+- `--open`: Muestra solo los puertos abiertos.
+- `-sS`: Realiza un escaneo SYN (stealth scan).
+- `-sC`: Ejecuta los scripts básicos de Nmap.
+- `-sV`: Detecta versiones de los servicios.
+- `--min-rate 2000`: Aumenta la velocidad del escaneo (ajusta según tu red).
+- `-n`: No resuelve nombres de host.
+- `-vvv`: Muestra información muy detallada (modo muy verbose).
+- `-Pn`: No realiza ping previo (asume que el host está activo).
+- `-oN Escaneo.txt`: Guarda el resultado en el archivo `Escaneo.txt`.
+
+Este comando te permitirá obtener un análisis completo de los puertos y servicios disponibles en el host  objetivo.
+
+**NOTA:**  
+En el examen se recomienda establecer un valor de `--min-rate` de 1500 o 2000 para asegurar un escaneo fiable, aunque esto puede hacer que el proceso sea más lento. Si necesitas que el escaneo sea más rápido, puedes aumentar el valor a 5000, pero ten en cuenta que podrías perder algunos resultados si la red o el equipo no soportan esa velocidad.
+
+---
+
+## Detectar Vulnerabilidades con NMAP
+
+---
+
+
+El siguiente comando permite buscar vulnerabilidades conocidas en los servicios expuestos de un host utilizando los scripts de Nmap:
+
+```bash
+nmap --script "vuln" -p445 10.0.10.50
+```
+
+- `--script "vuln"`: Ejecuta los scripts de la categoría "vuln" para detectar vulnerabilidades comunes.
+- `-p445`: Especifica el puerto a analizar (en este caso, el 445, típico de SMB en Windows).
+- `10.0.10.50`: Dirección IP del objetivo.
+
+Este comando es útil para identificar rápidamente posibles vulnerabilidades en servicios específicos del host analizado.
+
+En este caso, Nmap detectó la vulnerabilidad **CVE-2017-0143**. Para obtener más información sobre esta vulnerabilidad (recordando que en el examen no tendrás acceso a Internet), puedes utilizar la herramienta **msfconsole** de Metasploit.
+
+Para ello, ejecuta en la terminal:
+
+```bash
+msfconsole
+```
+
+Esta herramienta te permite automatizar muchos tipos de ataques y pruebas de explotación.
+
+Una vez abierta la consola de Metasploit, puedes buscar información sobre la vulnerabilidad ejecutando:
+
+```bash
+search CVE-2017-0143
+```
 
