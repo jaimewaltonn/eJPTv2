@@ -1,5 +1,10 @@
 # eJPTv2
-**Curso de la Academia: El Rincón del Hacker**
+
+---
+
+## Curso de la Academia: El Rincón del Hacker
+
+---
 
 ---------------------------------------------------------------------------------------------
 
@@ -11,7 +16,11 @@ Principalmente Mario nos pasa una máquina W7 para instalar en VirtualBox y nos 
 
 ---------------------------------------------------------------------------------------------
 
-**Comandos para actualizar Kali Linux.**
+---
+
+## Comandos para actualizar Kali Linux.
+
+---
 
 ```bash
 apt update
@@ -37,7 +46,11 @@ reboot
 
 ---------------------------------------------------------------------------------------------
 
-**Explicación sobre adaptador puente, NAT y Red NAT**
+---
+
+## Explicación sobre adaptador puente, NAT y Red NAT
+
+---
 
 Adaptador puente > las máquinas virtuales van a tener un comportamiento como si fuera un equipo más de mi red .
 
@@ -47,7 +60,11 @@ Red NAT o Red Interna > Es una red que solo se ve en VirtualBox
 
 ---------------------------------------------------------------------------------------------
 
-**Netcad para entablar Reverse Shell**
+---
+ 
+## Netcad para entablar Reverse Shell*
+
+---
 
 Máquina atacante entramos en esta web: https://www.revshells.com/ rellenamos la ip de nuestra máquina atacante (10.0.10.51) y ponemos el puerto, en este caso usamos el 443 y la web nos devuelve un comando para ejecutar en la máquina víctima, el comando ha sido este: 
 
@@ -73,7 +90,11 @@ Ejecutamos el comando en la máquina víctima (10.0.10.39) y esta establecerá u
 
 ---------------------------------------------------------------------------------------------
 
-**Compartir archivos desde mi red interna con un Servidor HTTP con Python + Reverse Shell**
+---
+
+## Compartir archivos desde mi red interna con un Servidor HTTP con Python + Reverse Shell**
+
+---
 
 <!-- Estos comandos se suelen usar en máquinas Linux -->
 
@@ -116,7 +137,11 @@ En el contexto de una reverse shell, este comando no ejecuta ninguna shell ni co
 
 ---------------------------------------------------------------------------------------------
 
-**Compartir archivos desde mi red interna con un Servidor HTTP con Python en máquinas Windows**
+---
+
+## Compartir archivos desde mi red interna con un Servidor HTTP con Python en máquinas Windows
+
+---
 
 <!-- Estos comandos se suelen usar en máquinas Windows cuando no funciona curl ni winget -->
 
@@ -149,4 +174,12 @@ certutil -split -urlcache -f [URL_del_archivo] [nombre_destino]
 ```
 
 Este método es útil para transferir archivos entre máquinas en una red interna, especialmente cuando no se dispone de herramientas como `curl` o `wget` en Windows.
+
+---------------------------------------------------------------------------------------------
+
+---
+
+## Reconocimiento de la red con ARP-SCAN o NETDISCOVER
+
+---
 
