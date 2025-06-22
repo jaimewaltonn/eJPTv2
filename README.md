@@ -53,7 +53,7 @@ Red NAT o Red Interna > Es una red que solo se ve en VirtualBox
 
 ---
  
-## Netcad para entablar Reverse Shell*
+## Netcad para entablar Reverse Shell
 
 ---
 
@@ -81,7 +81,7 @@ Ejecutamos el comando en la máquina víctima (10.0.10.39) y esta establecerá u
 
 ---
 
-## Compartir archivos desde mi red interna con un Servidor HTTP con Python + Reverse Shell**
+## Compartir archivos desde mi red interna con un Servidor HTTP con Python + Reverse Shell
 
 ---
 
