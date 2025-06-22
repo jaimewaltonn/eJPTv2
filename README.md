@@ -168,3 +168,39 @@ Este método es útil para transferir archivos entre máquinas en una red intern
 
 ---
 
+En el examen, no se nos proporcionará una lista de los equipos disponibles. Por ello, es fundamental saber cómo realizar un escaneo de la red para identificar los dispositivos presentes. Para esto, es recomendable tener preparados varios métodos (plan A, plan B y plan C) que nos permitan descubrir todos los equipos conectados.
+
+Nos indica que, utilizando el siguiente comando de **arp-scan**, podemos identificar todos los dispositivos conectados a nuestra red local:
+
+```bash
+arp-scan -I eth0 --localnet
+```
+
+- `-I eth0`: Especifica la interfaz de red a utilizar (en este caso, `eth0`).
+- `--localnet`: Indica que el escaneo se realizará sobre toda la red local.
+
+Este comando es muy útil para obtener una lista rápida de los dispositivos activos en tu red, mostrando sus direcciones IP y MAC.
+
+También nos enseña la herramienta **netdiscover**, que permite detectar los equipos conectados a nuestra red. Podemos utilizar el siguiente comando:
+
+```bash
+netdiscover -i eth0 -r 10.0.10.0/24
+```
+
+- `-i eth0`: Especifica la interfaz de red a utilizar (en este caso, `eth0`).
+- `-r 10.0.10.0/24`: Indica el rango de red a escanear (ajusta este valor según tu red).
+
+**Nota:** Es importante establecer correctamente el rango de red. Por ejemplo, en mi caso es `10.0.10.0/24`.
+
+También nos enseña la herramienta **nmap**, que permite detectar los equipos conectados a nuestra red. Podemos utilizar el siguiente comando:
+
+```bash
+nmap -sn 10.0.10.0/24 -oN ips_disponibles.txt
+```
+
+- `-sn`: Realiza un escaneo de ping para identificar los hosts activos sin hacer un escaneo de puertos.
+- `10.0.10.0/24`: Especifica el rango de red a analizar (ajústalo según tu red).
+- `-oN ips_disponibles.txt`: Guarda el resultado del escaneo en el archivo `ips_disponibles.txt`.
+
+Este comando es muy útil para obtener un listado de los dispositivos activos en tu red y guardar los resultados para su posterior análisis.
+
