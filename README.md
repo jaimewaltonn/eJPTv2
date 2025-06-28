@@ -506,6 +506,66 @@ nmap --script "vuln" -p21 192.168.1.198
 
 ![Imagen nmapcomandosscript](img/nmapcomandosscript.png)
 
-Despues de esto nos ejecutamos el programa de Metasploit framework como hemos hecho anteriormente 
+Despues de esto nos ejecutamos el programa de Metasploit framework como hemos hecho anteriormente.
 
+Os dejo un enlace al apartado donde se da la explicación: 
 [Ir al apartado de Explotación de Vulnerabilidades y Ataques de Fuerza Bruta](#explotación-de-vulnerabilidades-y-ataques-de-fuerza-bruta)
+
+despues de abrirlo, ejecutamos el siguiente comando:
+
+```bash
+search CVE-2011-2523
+```
+![Imagen search CVE-2011-2523](img/searchCVE-2011-2523.png)
+
+es el CVE que nos ha dado el comando de NMAP, pero como vemos en la imagen no nos encuentra nada.
+
+Hemos usado tamben el comando 
+```bash
+search vsFTPd version 2.3.4
+```
+![Imagen search vsFTPd version 2.3.4](img/searchvsFTPdversion2.3.4.png)
+
+pero tampoco ha encontrado nada.
+
+Finalmente hemos conseguido encontrarlo usando el comando:
+```bash
+search vsftpd
+```
+![Imagen search vsftpd](img/searchvsftpd.png)
+
+Esto nos ha demostrado que no siempre se puede encontrar el CVE directamente, y que a veces es necesario buscar por el nombre del servicio o software afectado.
+
+Seguido de esto, usamos el comando:
+
+```bash
+use 1
+```
+
+seguido del comando:
+
+```bash
+show options
+```
+
+A continuación, debemos configurar los parámetros necesarios para el exploit. Específicamente, rellenaremos el campo `RHOSTS` con la dirección IP de la máquina vulnerable (en este caso, `192.168.1.198`). Podemos observar que el campo `RPORT` ya está configurado por defecto con el puerto `21`, correspondiente al servicio FTP que deseamos explotar.
+
+Lanzamos el comando `run` y ya estamos dentro de la máquina vulnerable, podemos lanzar varios comandos como:
+
+```bash
+whoami
+```
+Este comando nos muestra el usuario con el que estamos conectados en la máquina comprometida. En este caso, debería devolver `root`, ya que hemos explotado una vulnerabilidad que nos otorga acceso como superusuario.
+
+```bash
+shell
+```
+Este comando nos permite acceder a una shell de comandos en la máquina comprometida. Desde aquí, podemos ejecutar comandos directamente en el sistema operativo de la máquina vulnerable.
+
+```bash
+pwd
+```
+
+Este comando nos muestra el directorio actual en el que nos encontramos dentro de la máquina comprometida. Es útil para orientarnos y saber dónde estamos trabajando.
+
+
