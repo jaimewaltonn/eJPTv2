@@ -373,7 +373,7 @@ Este comando nos proporcionará información detallada sobre el servicio SNMP en
 
 En este apartado, Mario nos enseña usar Metasploit para explotar vulnerabilidades y realizar ataques de fuerza bruta.
 
-para esto nos explica que en la máquina kali Linux debemos acceder por la aplicación de Metasploit hacerlo desde el menu de la pantalla principal para que cargue la Base de datos
+para esto nos explica que en la máquina kali Linux debemos acceder por la aplicación de Metasploit hacerlo desde el menu de la pantalla principal y no a través de la linea de comandos para que cargue la Base de datos
 Despues de esto vamos a explotar la máquina Windows 7 de la que ya hemos hablado anteriormente.
 
 ![Iniciar programa Metasploit](img/Metasploit.png)
@@ -487,12 +487,25 @@ netdiscover -i eth0 -r 192.168.1.0/24
 luego ejecutamos el comando: 
 
 ```bash
-	nmap -p- --open -sS -sC -sV --min-rate 5000 -n -vvv -Pn 192.168.1.198 -oN Escaneo.txt
+nmap -p- --open -sS -sC -sV --min-rate 5000 -n -vvv -Pn 192.168.1.198 -oN Escaneo.txt
 ```
 
 Este comando realiza un escaneo completo de la máquina vulnerable, identificando los puertos abiertos y los servicios que se están ejecutando en ellos.
 
 ![Imagen nmapcomandos](img/nmapcomandos.png)
 
-En la imagen solo vemos un trozo de todo lo que ha sacado el script.
+En la imagen solo vemos un trozo de todo los datos que nos ha reportado el script.
 
+despues de esto queremos explotar el puerto 21 ya que lo hemos visto abierto tras ejecutar el anterior comando.
+
+Para ello, ejecutamos el siguiente comando:
+
+```bash
+nmap --script "vuln" -p21 192.168.1.198
+```
+
+![Imagen nmapcomandosscript](img/nmapcomandosscript.png)
+
+Despues de esto nos ejecutamos el programa de Metasploit framework como hemos hecho anteriormente 
+
+[Ir al apartado de Uso Básico de Metasploit](#Explotación de Vulnerabilidades y Ataques de Fuerza Bruta)
