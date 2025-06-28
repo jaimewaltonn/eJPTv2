@@ -472,3 +472,24 @@ Para descargar la siguiente máquina vulnerable, puedes hacerlo directamente des
 
 También puedes encontrarla buscando **Metasploitable 2** en tu buscador preferido.  
 Esta máquina virtual es ampliamente utilizada en entornos de laboratorio para practicar técnicas de hacking ético, explotación de vulnerabilidades y pruebas de penetración en un entorno controlado y pruebas de penetración en un entorno controlado y seguro.
+
+Una vez que hayas descargado la máquina, importamos la el disco duro dentro de una nueva máquina linux en VirtualBox.
+
+La dejamos iniciada y volvemos a Kali Linux.
+
+para localizar la máquina vulnerable, ejecutamos el siguiente comando:
+
+```bash
+netdiscover -i eth0 -r 192.168.1.0/24
+```
+![Imagen netdiscover](img/netdiscover.png)
+
+luego ejecutamos el comando: 
+
+```bash
+	nmap -p- --open -sS -sC -sV --min-rate 5000 -n -vvv -Pn 192.168.1.198 -oN Escaneo.txt
+```
+
+Este comando realiza un escaneo completo de la máquina vulnerable, identificando los puertos abiertos y los servicios que se están ejecutando en ellos.
+
+![Imagen nmapcomandos](img/nmapcomandos.png)
