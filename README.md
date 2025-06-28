@@ -346,7 +346,7 @@ Si son UDP usaremos el siguiente comando:
 
 ```bash
 nmap -sU --top-ports 200 --min-rate=5000 -Pn 192.168.1.197
----
+```
 
 ## Resultado del escaneo con Nmap
 
