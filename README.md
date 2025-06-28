@@ -349,7 +349,6 @@ nmap -sU --top-ports 200 --min-rate=5000 -Pn 192.168.1.197
 ```
 
 ## Resultado del escaneo con Nmap
-
 ![Ejemplo de escaneo Nmap](img/EscanerPuertos_UDP.png)
 
 Como podemos observar en la imagen, Nmap ha detectado el puerto UDP abiertos en la máquina Vulnix. Estos puertos son: 161/udp (SNMP).
@@ -365,6 +364,7 @@ nmap -sU -p 161 --script snmp-info [Dirección IP del host]
 - `--script snmp-info`: Ejecuta el script de Nmap para obtener información sobre SNMP.
 ## Resultado del escaneo con Nmap
 ![Ejemplo de escaneo Nmap](img/EscanerPuertos_UDP_SNMP.png)
+
 Este comando nos proporcionará información detallada sobre el servicio SNMP en el puerto 161, incluyendo la versión del protocolo y otros detalles relevantes.
 
 ---
