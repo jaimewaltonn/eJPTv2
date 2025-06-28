@@ -454,3 +454,10 @@ Podemos usar el comando `mkdir` para crear un directorio en la máquina comprome
 mkdir pwned
 ```
 Este comando creará un nuevo directorio llamado "pwned" en la ubicación actual de la máquina comprometida.
+
+que no se nos olvide usar el comando pwd para ver en que directorio estamos.
+
+```bash
+pwd
+```
+Este comando muestra la ruta del directorio actual en el que nos encontramos dentro de la máquina comprometida. Es útil para orientarnos y saber dónde estamos trabajando.
