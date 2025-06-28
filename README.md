@@ -461,3 +461,14 @@ que no se nos olvide usar el comando pwd para ver en que directorio estamos.
 pwd
 ```
 Este comando muestra la ruta del directorio actual en el que nos encontramos dentro de la máquina comprometida. Es útil para orientarnos y saber dónde estamos trabajando.
+
+---
+## Uso Básico de Metasploit – Explotación de vsftpd en Linux
+---
+
+Para descargar la siguiente máquina vulnerable, puedes hacerlo directamente desde el siguiente enlace oficial de SourceForge:
+
+[Descargar Metasploitable 2](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/)
+
+También puedes encontrarla buscando **Metasploitable 2** en tu buscador preferido.  
+Esta máquina virtual es ampliamente utilizada en entornos de laboratorio para practicar técnicas de hacking ético, explotación de vulnerabilidades y pruebas de penetración en un entorno controlado y pruebas de penetración en un entorno controlado y seguro.
