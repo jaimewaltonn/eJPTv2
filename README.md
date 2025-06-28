@@ -352,7 +352,7 @@ nmap -sU --top-ports 200 --min-rate=5000 -Pn 192.168.1.197
 
 ![Ejemplo de escaneo Nmap](img/EscanerPuertos_UDP.png)
 
-Como podemos observar en la imagen, Nmap ha detectado varios puertos UDP abiertos en la máquina Vulnix. Estos puertos son: 161/udp (SNMP).
+Como podemos observar en la imagen, Nmap ha detectado el puerto UDP abiertos en la máquina Vulnix. Estos puertos son: 161/udp (SNMP).
 
 ---
 ## Explotación de Vulnerabilidades y Ataques de Fuerza Bruta
