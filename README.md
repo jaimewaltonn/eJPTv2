@@ -438,3 +438,19 @@ run
 Una vez que el exploit se haya ejecutado correctamente, deberíamos obtener una sesión de meterpreter en la máquina víctima. Esto nos permitirá interactuar con el sistema comprometido y realizar diversas acciones, como ejecutar comandos, transferir archivos o escalar privilegios.
 
 ![Maquina Vulnerada](img/MaquinaVulnerada.png)
+
+Podemos usar el comando `sysinfo` para obtener información sobre el sistema comprometido, como la versión del sistema operativo, el nombre del host y la arquitectura.
+
+```bash
+sysinfo
+```
+Este comando nos proporciona detalles sobre el sistema operativo, la arquitectura y otros aspectos relevantes de la máquina comprometida.
+
+![Maquina Vulnerada](img/crearcarpeta.png)
+
+Podemos usar el comando `mkdir` para crear un directorio en la máquina comprometida. Por ejemplo, para crear un directorio llamado "pwned", podemos ejecutar:
+
+```bash
+mkdir pwned
+```
+Este comando creará un nuevo directorio llamado "pwned" en la ubicación actual de la máquina comprometida.
