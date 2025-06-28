@@ -402,12 +402,12 @@ show options
 ```
 ![Comando use 0](img/comandouse0.png)
 
-Este comando muestigurar los parámetros necesarios para el exploit. Por ejemplo, podemos establecer la dirección IP del objetivo y el puerto.
+Este comando muestra las opciones disponibles para el módulo seleccionado, incluyendo los parámetros que debemos configurar antes de ejecutar el exploit.
+Luego, debemos configurar los parámetros necesarios para el exploit. Por ejemplo, podemos establecer la dirección IP del objetivo y el puerto.
 
 Mario nos explica que existe el exploit y dentro del exploit está el payload.
 
-una vez que el exploit haya entrado en la mra las opciones disponibles para el módulo seleccionado, incluyendo los parámetros que debemos configurar antes de ejecutar el exploit.
-Luego, debemos confáquina víctima, podemos ejecutar el payload.
+una vez que el exploit haya entrado en la máquina víctima, podemos ejecutar el payload.
 
 una vez entendio esto, podemos configurar los parámetros necesarios para el exploit. Por ejemplo, podemos establecer la dirección IP del objetivo y el puerto.
 
