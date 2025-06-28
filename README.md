@@ -446,7 +446,7 @@ sysinfo
 ```
 Este comando nos proporciona detalles sobre el sistema operativo, la arquitectura y otros aspectos relevantes de la máquina comprometida.
 
-![Maquina Vulnerada](img/crearcarpeta.png)
+![Maquina Vulnerada](img/crearcarpeta2.png)
 
 Podemos usar el comando `mkdir` para crear un directorio en la máquina comprometida. Por ejemplo, para crear un directorio llamado "pwned", podemos ejecutar:
 
