@@ -306,4 +306,54 @@ Una vez abierta la consola de Metasploit, puedes buscar información sobre la vu
 ```bash
 search CVE-2017-0143
 ```
+---
+
+## Escaneo de Puertos bajo el Protocolo UDP
+
+---
+
+En este caso Mario nos explica que tenemos que acceder a la web de https://vulnyx.com/ y descargar la máquina vulnerable llamada **Vulnix**. 
+Con esta máquina podemos atacar a los puertos UDP que se corresponden en este tema.
+
+Primeramente abrimos el Kali linux y ejecutamos el comando:
+
+```bash
+arp-scan -I eth0 --localnet
+```
+
+Esto nos permitirá identificar la dirección IP de la máquina Vulnix. Una vez que tengamos la IP, podemos proceder a escanear los puertos UDP utilizando Nmap.
+
+En nuestro caso como es una máquina de VirtualBox y la MAC suele comenzar por 08:00:27.
+
+Si son TCP usaremos el siguiente comando:
+
+```bash
+nmap -p- -sS -sC -sV --open --min-rate=5000 -n -Pn -vvv 192.168.1.197 -oN Escaneo.txt
+```	
+- `-p-`: Escanea todos los puertos (del 1 al 65535).
+- `-sS`: Realiza un escaneo SYN (stealth scan).	
+- `-sC`: Ejecuta los scripts básicos de Nmap.
+- `-sV`: Detecta versiones de los servicios.
+- `--open`: Muestra solo los puertos abiertos.
+- `--min-rate=5000`: Aumenta la velocidad del escaneo (ajusta según tu red).
+- `-n`: No resuelve nombres de host.
+- `-Pn`: No realiza ping previo (asume que el host está activo).	
+- `-vvv`: Muestra información muy detallada (modo muy verbose).
+- `-oN Escaneo.txt`: Guarda el resultado en el archivo `Escaneo.txt
+```
+
+Si son UDP usaremos el siguiente comando:
+
+```bash
+nmap -sU --top-ports 200 --min-rate=5000 -Pn 192.168.1.197
+---
+
+## Resultado del escaneo con Nmap
+
+![Ejemplo de escaneo Nmap](img/EscanerPuertos_UDP.png)
+
+---
+## Explotación de Vulnerabilidades y Ataques de Fuerza Bruta
+
+---
 
