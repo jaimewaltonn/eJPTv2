@@ -493,3 +493,6 @@ luego ejecutamos el comando:
 Este comando realiza un escaneo completo de la máquina vulnerable, identificando los puertos abiertos y los servicios que se están ejecutando en ellos.
 
 ![Imagen nmapcomandos](img/nmapcomandos.png)
+
+En la imagen solo vemos un trozo de todo lo que ha sacado el script.
+
