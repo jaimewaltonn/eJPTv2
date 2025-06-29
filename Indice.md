@@ -1,6 +1,6 @@
 # Índice
 
-1. [Conceptos Básicos de Redes](1.%20Conceptos%20+%20PBásicos%20de%Redes.md)
+1. [Conceptos Básicos de Redes](1.Conceptos Básicos de Redes.md)
    - [Resumen](2.%20Presentación%20+%20Preparación%20de%20Laboratorios.md#resumen)
    - [Protocolo DHCP](2.%20Presentación%20+%20Preparación%20de%20Laboratorios.md#protocolo-dhcp)
    - [Protocolo DNS](2.%20Presentación%20+%20Preparación%20de%20Laboratorios.md#protocolo-dns)
