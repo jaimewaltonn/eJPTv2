@@ -26,6 +26,7 @@
 	- [Detectar Vulnerabilidades con NMAP](3.%20Conceptos%20Básicos%20de%20Hacking.md#detectar-vulnerabilidades-con-nmap)
 	- [Escaneo de Puertos bajo el Protocolo UDP](3.%20Conceptos%20Básicos%20de%20Hacking.md#escaneo-de-puertos-bajo-el-protocolo-udp)
 
-4. [Enumeración de Servicios](4.%20Enumeración%20de%20Servicios.md)
-   - [Resumen](4.%20Enumeración%20de%20Servicios.md#resumen)
-   - [Enumeración de servicios comunes](4.%20Enumeración%20de%20Servicios.md#enumeración-de-servicios-comunes)
+4. [Explotación de Vulnerabilidades y Ataques de Fuerza Bruta](4.%20Explotación%20de%20Vulnerabilidades%20y%20Ataques%20de%20Fuerza%20Bruta.md)
+   - [Explotación de Vulnerabilidades y Ataques de Fuerza Bruta](4.%20Explotación%20de%20Vulnerabilidades%20y%20Ataques%20de%20Fuerza%20Bruta.md#explotación-de-vulnerabilidades-y-ataques-de-fuerza-bruta)
+   - [Uso Básico de Metasploit – Explotación de vsftpd en Linux](4.%20Explotación%20de%20Vulnerabilidades%20y%20Ataques%20de%20Fuerza%20Bruta.md#uso-básico-de-metasploit--explotación-de-vsftpd-en-linux)
+   - [Generar nuestros propios Payloads con Msfvenom](4.%20Explotación%20de%20Vulnerabilidades%20y%20Ataques%20de%20Fuerza%20Bruta.md#generar-nuestros-propios-payloads-con-msfvenom)
