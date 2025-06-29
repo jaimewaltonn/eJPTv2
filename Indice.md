@@ -16,10 +16,15 @@
    - [Redes de clase A, B y C](2.%20Presentación%20+%20Preparación%20de%20Laboratorios.md#redes-de-clase-a-b-y-c)
    - [Sistema CIDR](2.%20Presentación%20+%20Preparación%20de%20Laboratorios.md#sistema-cidr)
 
-3. [Reconocimiento y Escaneo de Red](3.%20Reconocimiento%20y%20Escaneo%20de%20Red.md)
-   - [Resumen](3.%20Reconocimiento%20y%20Escaneo%20de%20Red.md#resumen)
-   - [Tipos de escaneo](3.%20Reconocimiento%20y%20Escaneo%20de%20Red.md#tipos-de-escaneo)
-   - [Herramientas utilizadas](3.%20Reconocimiento%20y%20Escaneo%20de%20Red.md#herramientas-utilizadas)
+
+3. [Conceptos Básicos de Hacking](3.%20Conceptos%20Básicos%20de%20Hacking.md)
+	- [Netcat para entablar Reverse Shell](3.%20Conceptos%20Básicos%20de%20Hacking.md#netcad-para-entablar-reverse-shell)
+	- [Compartir archivos desde mi red interna con un Servidor HTTP con Python + Reverse Shell](3.%20Conceptos%20Básicos%20de%20Hacking.md#compartir-archivos-desde-mi-red-interna-con-un-servidor-http-con-python--reverse-shell)
+	- [Compartir archivos desde mi red interna con un Servidor HTTP con Python en máquinas Windows](3.%20Conceptos%20Básicos%20de%20Hacking.md#compartir-archivos-desde-mi-red-interna-con-un-servidor-http-con-python-en-máquinas-windows)
+	- [Reconocimiento de la red con ARP-SCAN, NETDISCOVER y NMAP](3.%20Conceptos%20Básicos%20de%20Hacking.md#reconocimiento-de-la-red-con-arp-scan-netdiscover-y-nmap)
+	- [Escaneos básicos con NMAP](3.%20Conceptos%20Básicos%20de%20Hacking.md#escaneos-básicos-con-nmap)
+	- [Detectar Vulnerabilidades con NMAP](3.%20Conceptos%20Básicos%20de%20Hacking.md#detectar-vulnerabilidades-con-nmap)
+	- [Escaneo de Puertos bajo el Protocolo UDP](3.%20Conceptos%20Básicos%20de%20Hacking.md#escaneo-de-puertos-bajo-el-protocolo-udp)
 
 4. [Enumeración de Servicios](4.%20Enumeración%20de%20Servicios.md)
    - [Resumen](4.%20Enumeración%20de%20Servicios.md#resumen)
